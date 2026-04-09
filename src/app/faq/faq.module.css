@@ -1,0 +1,27 @@
+.pageHeader {
+  background: var(--primary-navy);
+  color: var(--background-white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  color: var(--background-white);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pageHeader p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
+
+.faqSection {
+  background: var(--background-light);
+}
+
+.faqWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}

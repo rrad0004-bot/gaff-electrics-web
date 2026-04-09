@@ -1,0 +1,92 @@
+.pageHeader {
+  background: var(--primary-navy);
+  color: var(--background-white);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  color: var(--background-white);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pageHeader p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
+
+.quoteSection {
+  background: var(--background-light);
+}
+
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--background-white);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: var(--primary-navy);
+  font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--background-light);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--accent-electric);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+  .formContainer {
+    padding: 2rem;
+  }
+}

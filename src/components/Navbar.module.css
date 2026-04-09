@@ -1,0 +1,69 @@
+.navbar {
+  height: var(--nav-height);
+  background: var(--background-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--accent-electric);
+  font-weight: 400;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a {
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: var(--accent-electric);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.phoneLink {
+  font-weight: 600;
+  color: var(--primary-navy);
+  transition: color 0.2s ease;
+}
+
+.phoneLink:hover {
+  color: var(--accent-electric);
+}
+
+@media (max-width: 968px) {
+  .navLinks {
+    display: none;
+  }
+  .navActions .phoneLink {
+    display: none;
+  }
+}
