@@ -70,11 +70,19 @@
 }
 
 
-.navActions a.btn-primary {
-  padding: 0.35rem 0.75rem !important;
+.navActions .btn-primary {
+  padding: 0.4rem 0.85rem;
   font-size: 0.9rem;
-  line-height: 1 !important;
   border-radius: 6px;
+}
+
+.btnPrimary {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background: var(--accent-blue);
+  color: white;
+  box-shadow: var(--shadow-md);
   display: inline-flex;
   align-items: center;
 }

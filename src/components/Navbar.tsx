@@ -22,11 +22,11 @@ export default function Navbar() {
           <a href="tel:18005550199" className={styles.phoneLink}>
             📞 1800-555-0199
           </a>
-          <Link href="/quote" className="btn-primary">
+          <Link href="/quote" className={styles.btnPrimary}>
             Request Quote
           </Link>
         </div>
-        
+
         {/* Mobile menu button would go here */}
       </div>
     </nav>
