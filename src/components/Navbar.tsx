@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
@@ -24,7 +25,7 @@ export default function Navbar() {
           <a href="tel:18005550199" className={styles.phoneLink}>
             📞 1800-555-0199
           </a>
-          <Link href="/quote" className={styles.btnPrimary}>
+          <Link href="/quote" className="btn-primary">
             Request Quote
           </Link>
         </div>
