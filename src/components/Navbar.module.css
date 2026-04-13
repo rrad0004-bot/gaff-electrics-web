@@ -68,3 +68,14 @@
     display: none;
   }
 }
+
+
+.navActions a.btn-primary {
+  padding: 0.4rem 0.9rem;
+  /* reduces thickness */
+  line-height: 1;
+  /* removes extra height space */
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+}
