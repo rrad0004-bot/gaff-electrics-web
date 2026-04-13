@@ -117,10 +117,18 @@
     padding: 1rem;
     box-shadow: var(--shadow-md);
     gap: 1rem;
+
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.25s ease;
+    pointer-events: none;
   }
 
   .showMenu {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .navActions {
