@@ -32,7 +32,7 @@ export default function Navbar() {
           </a>
 
           <Link href="/quote" className="btn-primary" onClick={closeMenu}>
-            Request Quote
+            Get a Free Quote
           </Link>
         </div>
 
