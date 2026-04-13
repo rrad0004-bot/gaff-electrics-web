@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className={styles.navbar}>
       <div className={`container ${styles.navContainer}`}>
@@ -9,7 +11,7 @@ export default function Navbar() {
           GAFF<span>Electrics</span>
         </Link>
 
-        <div className={styles.navLinks}>
+        <div className={`${styles.navLinks} ${menuOpen ? styles.showMenu : ''}`}>
           <Link href="/">Home</Link>
           <Link href="/about">About Us</Link>
           <Link href="/services">Services</Link>
@@ -27,7 +29,12 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile menu button would go here */}
+        <button
+          className={styles.hamburger}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
       </div>
     </nav>
   );
