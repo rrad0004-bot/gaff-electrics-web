@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -27,11 +28,11 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.heroImageWrapper}>
-            <Image 
-              src="/hero.png" 
-              alt="Professional Local Electrician" 
-              width={600} 
-              height={500} 
+            <Image
+              src="/hero.png"
+              alt="Professional Local Electrician"
+              width={600}
+              height={500}
               className={styles.heroImage}
               priority
             />
@@ -41,7 +42,13 @@ export default function Home() {
       </section>
 
       {/* Trust Signals Section */}
-      <section className={styles.trustSignals}>
+      <motion.section
+        className={styles.trustSignals}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className={`container ${styles.trustGrid}`}>
           <div className={styles.trustItem}>
             <span className={styles.trustIcon}>✓</span> Licensed & Insured
@@ -56,7 +63,7 @@ export default function Home() {
             <span className={styles.trustIcon}>🏅</span> Experienced Local Electricians
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Section */}
       <section className={`section ${styles.servicesSection}`}>
@@ -64,27 +71,27 @@ export default function Home() {
           <h2 className="section-title">Our Premium Services</h2>
           <div className={styles.servicesGrid}>
             {[
-              { 
-                title: "Residential Electrical", 
-                desc: "Keep your home safe and modern. From house re-wiring and safety switches to ceiling fans and downlight installations.", 
-                icon: "🏠" 
+              {
+                title: "Residential Electrical",
+                desc: "Keep your home safe and modern. From house re-wiring and safety switches to ceiling fans and downlight installations.",
+                icon: "🏠"
               },
-              { 
-                title: "Commercial Fit-outs", 
-                desc: "Minimize downtime and enhance productivity with reliable electrical fault finding, testing, tagging, and complex installations.", 
-                icon: "🏢" 
+              {
+                title: "Commercial Fit-outs",
+                desc: "Minimize downtime and enhance productivity with reliable electrical fault finding, testing, tagging, and complex installations.",
+                icon: "🏢"
               },
-              { 
-                title: "Emergency & Insurance", 
-                desc: "Rapid response when you need it most. We provide expert make-safe works and detailed electrical damage reports for insurance.", 
-                icon: "🚨" 
+              {
+                title: "Emergency & Insurance",
+                desc: "Rapid response when you need it most. We provide expert make-safe works and detailed electrical damage reports for insurance.",
+                icon: "🚨"
               },
             ].map((service, index) => (
               <div key={index} className={styles.serviceCard}>
                 <div className={styles.serviceIconWrapper}>{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <Link href={`/services`} className="btn-secondary" style={{width: '100%', padding: '0.75rem'}}>
+                <Link href={`/services`} className="btn-secondary" style={{ width: '100%', padding: '0.75rem' }}>
                   Learn more
                 </Link>
               </div>
@@ -97,11 +104,11 @@ export default function Home() {
       <section className={styles.aboutSection}>
         <div className={`container ${styles.aboutContainer}`}>
           <div className={styles.aboutImageWrapper}>
-             <Image 
-              src="/team.png" 
-              alt="Gaff Electrics Team" 
-              width={600} 
-              height={400} 
+            <Image
+              src="/team.png"
+              alt="Gaff Electrics Team"
+              width={600}
+              height={400}
               className={styles.aboutImage}
             />
           </div>
@@ -113,7 +120,7 @@ export default function Home() {
             <p>
               Our team is highly experienced and always professional. We offer a full range of services including split air conditioners, home theatre setup, security lighting, and thorough home inspections with all work fully guaranteed.
             </p>
-            <Link href="/about" className="btn-primary" style={{marginTop: '1rem'}}>
+            <Link href="/about" className="btn-primary" style={{ marginTop: '1rem' }}>
               Read Our Story
             </Link>
           </div>
@@ -134,7 +141,7 @@ export default function Home() {
               <div key={index} className={styles.featureCard}>
                 <div className={styles.featureIcon}>{feature.icon}</div>
                 <h3>{feature.title}</h3>
-                <p style={{color: 'var(--text-muted)'}}>{feature.desc}</p>
+                <p style={{ color: 'var(--text-muted)' }}>{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -167,7 +174,7 @@ export default function Home() {
           <div className={styles.contactInfo}>
             <h2>Ready to Get Started?</h2>
             <p>Contact us today for a free quote. We will respond as quickly as possible to discuss your electrical needs.</p>
-            
+
             <div className={styles.contactDetails}>
               <div className={styles.contactDetailItem}>
                 <div className={styles.contactDetailIcon}>📞</div>
@@ -183,7 +190,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className={styles.contactFormWrapper}>
             <form className={styles.contactForm} onSubmit={(e) => e.preventDefault()}>
               <div className={styles.formGroup}>
