@@ -255,25 +255,46 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      < section className={`section ${styles.testimonialsSection}`
-      }>
+      <section className={`section ${styles.testimonialsSection}`}>
         <div className="container">
           <h2 className="section-title">Client Success Stories</h2>
-          <div className={styles.testimonialsGrid}>
+
+          <motion.div
+            className={styles.testimonialsGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
             {[
               { name: "Sarah M.", text: "Alan was fantastic! Installed split systems and updated all our downlights. Highly professional and left the place spotless." },
               { name: "John D.", text: "Had an electrical fault in my shop on a Friday evening. Gaff Electrics arrived quickly, diagnosed it, and saved us from major downtime." },
               { name: "Elena R.", text: "Honest, reliable, and reasonably priced. It's hard to find good tradesmen these days, but these guys are the real deal." }
             ].map((item, index) => (
-              <div key={index} className={styles.testimonialCard}>
+              <motion.div
+                key={index}
+                className={styles.testimonialCard}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.9 }}
+              >
                 <div className={styles.stars}>★★★★★</div>
                 <p className={styles.testimonialText}>&quot;{item.text}&quot;</p>
                 <div className={styles.testimonialAuthor}>- {item.name}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section >
+      </section>
 
       {/* Contact Section */}
       < section id="contact" className={styles.contactSection} >
