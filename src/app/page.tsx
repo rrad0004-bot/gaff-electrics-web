@@ -75,19 +75,19 @@ export default function Home() {
         className={styles.trustSignals}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        viewport={{ once: true }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         <motion.div
           className={`container ${styles.trustGrid}`}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={{
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: 0.15
+                staggerChildren: 0.20
               }
             }
           }}
@@ -140,12 +140,12 @@ export default function Home() {
             className={styles.servicesGrid}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
             variants={{
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.15
+                  staggerChildren: 0.20
                 }
               }
             }}
@@ -202,8 +202,8 @@ export default function Home() {
             className={styles.aboutImageWrapper}
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
+            transition={{ duration: 1.1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <Image
               src="/team.png"
@@ -220,7 +220,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h2>Quality Service with Great Attention to Detail</h2>
 
@@ -250,12 +250,12 @@ export default function Home() {
             className={styles.featuresGrid}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
             variants={{
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.15
+                  staggerChildren: 0.20
                 }
               }
             }}
@@ -292,7 +292,7 @@ export default function Home() {
             className={styles.testimonialsGrid}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
             variants={{
               hidden: {},
               visible: {
@@ -314,7 +314,7 @@ export default function Home() {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                transition={{ duration: 0.9 }}
+                transition={{ duration: 1.1, ease: "easeOut" }}
               >
                 <div className={styles.stars}>★★★★★</div>
                 <p className={styles.testimonialText}>&quot;{item.text}&quot;</p>
@@ -334,8 +334,8 @@ export default function Home() {
             className={styles.contactInfo}
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
+            transition={{ duration: 1.1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h2>Ready to Get Started?</h2>
             <p>
@@ -369,7 +369,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <form
               className={styles.contactForm}
