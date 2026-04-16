@@ -297,47 +297,79 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      < section id="contact" className={styles.contactSection} >
+      <section id="contact" className={styles.contactSection}>
         <div className={`container ${styles.contactContainer}`}>
-          <div className={styles.contactInfo}>
+
+          {/* LEFT - INFO */}
+          <motion.div
+            className={styles.contactInfo}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+          >
             <h2>Ready to Get Started?</h2>
-            <p>Contact us today for a free quote. We will respond as quickly as possible to discuss your electrical needs.</p>
+            <p>
+              Contact us today for a free quote. We will respond as quickly as possible to discuss your electrical needs.
+            </p>
 
             <div className={styles.contactDetails}>
               <div className={styles.contactDetailItem}>
                 <div className={styles.contactDetailIcon}>📞</div>
                 <a href="tel:0402255595">Alan - 0402 255 595</a>
               </div>
+
               <div className={styles.contactDetailItem}>
                 <div className={styles.contactDetailIcon}>✉️</div>
                 <a href="mailto:alan@gaffelectrics.com.au">alan@gaffelectrics.com.au</a>
               </div>
+
               <div className={styles.contactDetailItem}>
                 <div className={styles.contactDetailIcon}>📍</div>
-                <span>PO. Box 3546, Caroline Springs 3023<br />Servicing Western & Northern Melbourne</span>
+                <span>
+                  PO. Box 3546, Caroline Springs 3023<br />
+                  Servicing Western & Northern Melbourne
+                </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.contactFormWrapper}>
-            <form className={styles.contactForm} onSubmit={(e) => e.preventDefault()}>
+          {/* RIGHT - FORM */}
+          <motion.div
+            className={styles.contactFormWrapper}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
+            <form
+              className={styles.contactForm}
+              onSubmit={(e) => e.preventDefault()}
+            >
               <div className={styles.formGroup}>
                 <input type="text" placeholder="Your Name" required />
               </div>
+
               <div className={styles.formGroup}>
                 <input type="email" placeholder="Your Email Address" required />
               </div>
+
               <div className={styles.formGroup}>
                 <input type="tel" placeholder="Your Phone Number" required />
               </div>
+
               <div className={styles.formGroup}>
-                <textarea rows={4} placeholder="How can we help you?" required></textarea>
+                <textarea rows={4} placeholder="How can we help you?" required />
               </div>
-              <button type="submit" className={styles.submitBtn}>Request My Free Quote</button>
+
+              <button type="submit" className={styles.submitBtn}>
+                Request My Free Quote
+              </button>
             </form>
-          </div>
+          </motion.div>
+
         </div>
-      </section >
+      </section>
     </>
   );
 }
