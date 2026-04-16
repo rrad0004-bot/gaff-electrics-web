@@ -163,10 +163,19 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* About Section */}
       <section className={styles.aboutSection}>
         <div className={`container ${styles.aboutContainer}`}>
-          <div className={styles.aboutImageWrapper}>
+
+          {/* IMAGE */}
+          <motion.div
+            className={styles.aboutImageWrapper}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+          >
             <Image
               src="/team.png"
               alt="Gaff Electrics Team"
@@ -174,19 +183,31 @@ export default function Home() {
               height={400}
               className={styles.aboutImage}
             />
-          </div>
-          <div className={styles.aboutContent}>
+          </motion.div>
+
+          {/* TEXT */}
+          <motion.div
+            className={styles.aboutContent}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
             <h2>Quality Service with Great Attention to Detail</h2>
+
             <p>
               At Gaff Electrics, we service all your electrical needs across the western and northern suburbs of Melbourne. With a focus on safety, efficiency, and professionalism, we ensure every job—big or small—is done right the first time.
             </p>
+
             <p>
               Our team is highly experienced and always professional. We offer a full range of services including split air conditioners, home theatre setup, security lighting, and thorough home inspections with all work fully guaranteed.
             </p>
+
             <Link href="/about" className="btn-primary" style={{ marginTop: '1rem' }}>
               Read Our Story
             </Link>
-          </div>
+          </motion.div>
+
         </div>
       </section>
 
