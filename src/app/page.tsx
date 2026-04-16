@@ -49,20 +49,57 @@ export default function Home() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <div className={`container ${styles.trustGrid}`}>
-          <div className={styles.trustItem}>
+        <motion.div
+          className={`container ${styles.trustGrid}`}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
+          <motion.div
+            className={styles.trustItem}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
             <span className={styles.trustIcon}>✓</span> Licensed & Insured
-          </div>
-          <div className={styles.trustItem}>
+          </motion.div>
+          <motion.div
+            className={styles.trustItem}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
             <span className={styles.trustIcon}>⚡</span> Fast Response Time
-          </div>
-          <div className={styles.trustItem}>
+          </motion.div>
+          <motion.div
+            className={styles.trustItem}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
             <span className={styles.trustIcon}>💰</span> Free, No-Obligation Quotes
-          </div>
-          <div className={styles.trustItem}>
+          </motion.div>
+          <motion.div
+            className={styles.trustItem}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
             <span className={styles.trustIcon}>🏅</span> Experienced Local Electricians
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </motion.section>
 
       {/* Services Section */}
