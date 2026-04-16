@@ -11,23 +11,51 @@ export default function Home() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroContainer}`}>
+
+          {/* TEXT CONTENT */}
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>
+
+            <motion.h1
+              className={styles.heroTitle}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
               Reliable Electrical Solutions <span>When You Need Them Most</span>
-            </h1>
-            <p className={styles.heroDescription}>
+            </motion.h1>
+
+            <motion.p
+              className={styles.heroDescription}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
               Professional, guaranteed electrical services across western and northern Melbourne. Fast response, no hidden fees, and expert workmanship.
-            </p>
-            <div className={styles.heroActions}>
+            </motion.p>
+
+            <motion.div
+              className={styles.heroActions}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
               <Link href="#contact" className="btn-primary">
                 Get a Free Quote
               </Link>
               <a href="tel:0402255595" className="btn-secondary">
                 Call Alan Now
               </a>
-            </div>
+            </motion.div>
+
           </div>
-          <div className={styles.heroImageWrapper}>
+
+          {/* IMAGE */}
+          <motion.div
+            className={styles.heroImageWrapper}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <Image
               src="/hero.png"
               alt="Professional Local Electrician"
@@ -37,7 +65,8 @@ export default function Home() {
               priority
             />
             <div className={styles.imageBackdrop}></div>
-          </div>
+          </motion.div>
+
         </div>
       </section>
 
