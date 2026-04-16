@@ -211,29 +211,52 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Why Choose Us Section */}
       <section className={`section ${styles.whyUsSection}`}>
         <div className="container">
           <h2 className="section-title">Why Melbourne Chooses Us</h2>
-          <div className={styles.featuresGrid}>
+
+          <motion.div
+            className={styles.featuresGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
             {[
               { icon: '🛡️', title: 'Workmanship Guarantee', desc: 'All our work is guaranteed, giving you peace of mind long after we leave.' },
               { icon: '⏱️', title: 'On-Time Arrival', desc: 'We value your time. Our electricians arrive on schedule and complete the job efficiently.' },
               { icon: '💡', title: 'Upfront Pricing', desc: 'No hidden costs. We provide clear, accurate quotes before any work begins.' },
               { icon: '👨‍🔧', title: 'Expert Team', desc: 'Highly trained professionals who stay updated with the latest safety standards.' }
             ].map((feature, index) => (
-              <div key={index} className={styles.featureCard}>
+              <motion.div
+                key={index}
+                className={styles.featureCard}
+                variants={{
+                  hidden: { opacity: 0, y: 25 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
                 <div className={styles.featureIcon}>{feature.icon}</div>
                 <h3>{feature.title}</h3>
                 <p style={{ color: 'var(--text-muted)' }}>{feature.desc}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className={`section ${styles.testimonialsSection}`}>
+      < section className={`section ${styles.testimonialsSection}`
+      }>
         <div className="container">
           <h2 className="section-title">Client Success Stories</h2>
           <div className={styles.testimonialsGrid}>
@@ -250,10 +273,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact Section */}
-      <section id="contact" className={styles.contactSection}>
+      < section id="contact" className={styles.contactSection} >
         <div className={`container ${styles.contactContainer}`}>
           <div className={styles.contactInfo}>
             <h2>Ready to Get Started?</h2>
@@ -293,7 +316,7 @@ export default function Home() {
             </form>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 }
