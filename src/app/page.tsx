@@ -106,7 +106,21 @@ export default function Home() {
       <section className={`section ${styles.servicesSection}`}>
         <div className="container">
           <h2 className="section-title">Our Premium Services</h2>
-          <div className={styles.servicesGrid}>
+
+          <motion.div
+            className={styles.servicesGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
             {[
               {
                 title: "Residential Electrical",
@@ -124,16 +138,28 @@ export default function Home() {
                 icon: "🚨"
               },
             ].map((service, index) => (
-              <div key={index} className={styles.serviceCard}>
+              <motion.div
+                key={index}
+                className={styles.serviceCard}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
                 <div className={styles.serviceIconWrapper}>{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <Link href={`/services`} className="btn-secondary" style={{ width: '100%', padding: '0.75rem' }}>
+
+                <Link
+                  href="/services"
+                  className="btn-secondary"
+                  style={{ width: '100%', padding: '0.75rem' }}
+                >
                   Learn more
                 </Link>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
